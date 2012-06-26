@@ -3,7 +3,6 @@ K-Script
 
 K-Script is an open sourced script parser with logic for java
 
-/**
  * This is my simple script parsing engine called K-Script
  * 
  * The logic behind the scripting system is pretty simple
@@ -11,29 +10,17 @@ K-Script is an open sourced script parser with logic for java
  * to parse through all of the data and do the actions
  * based on simple logic
  * 
- * Commands:
+ * Functions:
  * print 	<object val>											- this prints a message to the console
  * memory 	<object val> 											- this clears the memory cache and resets it to the new value
- * store	<memoery index>\t<object val>							- this stores the value into that memory index
+ * store	<memoery index> <object val>							- this stores the value into that memory index
  * goto		<goto line>												- this goes to that certain line
- * if 		<object val>\t<object val>\t<goto line>\t<goto line>	- this checks if value eqauls value, if so it goes to gotoline 1, if not gotoline2
- * 
- * In-Commands:
- * memory	<memory index>											- this loads a value from the memory index
+ * if 		<object val> <object val> <goto line> <goto line>		- this checks if value eqauls value, if so it goes to gotoline 1, if not gotoline2
  * 
  * Operators:
+ * memory	<address>												- this loads a value from the memory address
  * +																- this adds onto the existing string (need to make a check for int)
  * -																- this converts the strings to ints then does the math function
- * 
- * 
- * memory 	initialize	<value>
- * memory 	add	<value>
- * memory	set	<value>
- * 
- * 
- * A "command" in KScript is the instruction you want the script to do, I.E. goto <value>
- * An "in-command" is something that you would call inside of another command, I.E. goto memory(1)
- * An operator is something you would use inside of an in-command, I.E. goto memory(1)+"5"
  * 
  * 
  * CHANGELOG:
@@ -54,8 +41,3 @@ K-Script is an open sourced script parser with logic for java
  * 06/26/2012:
  * Added + operator
  * Added - operator
- * 
- * 
- * @author Konloch
- *
- */
