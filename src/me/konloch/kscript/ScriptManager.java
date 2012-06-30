@@ -43,7 +43,10 @@ import java.util.StringTokenizer;
  * 
  * 06/26/2012:
  * Added + operator
- * Added - operator
+ * Added ; operator
+ * 
+ * 06/30/2012:
+ * Renamed a few things, cleaned some stuff up
  * 
  * 
  * @author Konloch
@@ -158,7 +161,7 @@ public class ScriptManager {
 				if(argument[0].startsWith("goto")) {
 					line = Integer.parseInt(argument[1]) -2;
 				}
-				if(argument[0].startsWith("if")) {
+				if(argument[0].startsWith("ifeq")) {
 					if(parseOperators(argument[1]).equals(parseOperators(argument[2]))) {
 						line = Integer.parseInt(argument[3]) -2;
 					} else {
@@ -186,16 +189,24 @@ public class ScriptManager {
 	     while (st.hasMoreTokens()) {
 	         String currentToken = st.nextToken();
 
-	         /* In-Commands */
+	         /* Comments*/
 	         if(currentToken.startsWith("\"")) { //is a pre-defined value
 	        	 currentToken = currentToken.substring(1,currentToken.length()-1);
 	         } else {
+	        	 /* Outcall Operators */
 		         if(currentToken.startsWith("memory")) {
 					currentToken = memory.get(Integer.parseInt(currentToken.substring("memory".length())));
-			      } else if(currentToken.equals("+")) {
+			      } else if(currentToken.startsWith("timems")) {
+					currentToken = ""+System.currentTimeMillis();
+			      } else
+			      
+			      /* Operators */
+			      if(currentToken.equals("+")) {
 			      } else if(currentToken.equals(";")) {
-			      } else {
-			    	  throw new KScriptException("Cannot find that operator or in-command");
+			      }
+			      
+			      else {
+			    	  throw new KScriptException("Cannot find that operator");
 			      }
 	         }
 

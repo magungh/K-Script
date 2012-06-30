@@ -40,4 +40,7 @@ K-Script is an open sourced script parser with logic for java
  * 
  * 06/26/2012:
  * Added + operator
- * Added - operator
+ * Added ; operator
+ * 
+ * 06/30/2012:
+ * Renamed a few things, cleaned some stuff up
