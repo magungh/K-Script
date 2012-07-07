@@ -13,5 +13,5 @@ store	4	"Wor"
 
 print	"Hello World"
 print	memory0
-print	memory2-+-" "-+-memory1
-print	memory3-+-"lo "-+-memory4-+-"ld"
+print	memory2_+_" "_+_memory1
+print	memory3_+_"lo "_+_memory4_+_"ld"
